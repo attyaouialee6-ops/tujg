@@ -1,13 +1,19 @@
-n = int(input("Enter n: "))
-steps=0
+import random
 
-while n != 1:
-    if n%2 == 0:
-        n = n/2
+number = nombre = random.randint(1, 100)
+
+guess = 0
+nb_tries = int(input("how many times you want to try "))
+current_number = 0
+
+while guess != number and  current_number != nb_tries :
+    guess = int(input("Enter your guess: "))
+    current_number = current_number + 1 
+    if guess < number:
+        print("Too low")
+    elif guess > number:
+        print("Too high")
     else:
-        n = n*3 + 1
-
-    print(int(n)) 
-    steps = steps + 1
-    
-print("Number of steps:" , steps )
+        print("Congratulations! You guessed the number correctly!") 
+if guess != number:
+        print("Game Over! lost.")
