@@ -1,19 +1,7 @@
-import random
+sample_list = [('item1', '12.20'), ('item2', '15.10'), ('item3', '24.5')]
 
-number = nombre = random.randint(1, 100)
+def sort_by_float(items):
+    return sorted(items, key=lambda x: float(x[1]), reverse=True)
 
-guess = 0
-nb_tries = int(input("how many times you want to try "))
-current_number = 0
-
-while guess != number and  current_number != nb_tries :
-    guess = int(input("Enter your guess: "))
-    current_number = current_number + 1 
-    if guess < number:
-        print("Too low")
-    elif guess > number:
-        print("Too high")
-    else:
-        print("Congratulations! You guessed the number correctly!") 
-if guess != number:
-        print("Game Over! lost.")
+print(sort_by_float(sample_list))
+# [('item3', '24.5'), ('item2', '15.10'), ('item1', '12.20')]
