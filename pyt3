@@ -1,99 +1,103 @@
-# ==========================
-# Question 1
-# Multiply all the items in a list
-# ==========================
 
-numbers = [2, 3, 6]
+"""
+Python Data Structures Exercises
+Author: Your Name
+Description:
+Solutions for six Python exercises involving lists, tuples,
+dictionaries, and sets.
+"""
 
-result = 1
-for num in numbers:
-    result *= num
+def question1():
+    # Multiply all the items in a list
+    numbers = [2, 3, 6]
+    result = 1
 
-print("Question 1")
-print("Result =", result)
+    for num in numbers:
+        result *= num
 
-
-# ==========================
-# Question 2
-# Sort a list of tuples by the last element
-# ==========================
-
-sample_list = [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
-
-sample_list.sort(key=lambda x: x[-1])
-
-print("\nQuestion 2")
-print(sample_list)
+    print("Question 1")
+    print("Result =", result)
 
 
-# ==========================
-# Question 3
-# Combine two dictionaries
-# ==========================
+def question2():
+    # Sort a list of tuples by the last element
+    sample_list = [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
 
-d1 = {'a': 100, 'b': 200, 'c': 300}
-d2 = {'a': 300, 'b': 200, 'd': 400}
+    sample_list.sort(key=lambda x: x[-1])
 
-result = d1.copy()
-
-for key, value in d2.items():
-    if key in result:
-        result[key] += value
-    else:
-        result[key] = value
-
-print("\nQuestion 3")
-print(result)
+    print("\nQuestion 2")
+    print(sample_list)
 
 
-# ==========================
-# Question 4
-# Generate a dictionary (i : i*i)
-# ==========================
+def question3():
+    # Combine two dictionaries by adding common values
+    d1 = {'a': 100, 'b': 200, 'c': 300}
+    d2 = {'a': 300, 'b': 200, 'd': 400}
 
-n = int(input("\nQuestion 4\nEnter a number: "))
+    result = d1.copy()
 
-dictionary = {}
+    for key, value in d2.items():
+        if key in result:
+            result[key] += value
+        else:
+            result[key] = value
 
-for i in range(1, n + 1):
-    dictionary[i] = i * i
-
-print(dictionary)
-
-
-# ==========================
-# Question 5
-# Sort tuples by float value (descending)
-# ==========================
-
-items = [
-    ('item1', '12.20'),
-    ('item2', '15.10'),
-    ('item3', '24.5')
-]
-
-items.sort(key=lambda x: float(x[1]), reverse=True)
-
-print("\nQuestion 5")
-print(items)
+    print("\nQuestion 3")
+    print(result)
 
 
-# ==========================
-# Question 6
-# Create, iterate, add, and remove items from a set
-# ==========================
+def question4():
+    # Generate a dictionary (i : i*i)
+    n = int(input("\nQuestion 4\nEnter a number: "))
 
-my_set = {0, 1, 2, 3, 4}
+    dictionary = {}
 
-print("\nQuestion 6")
-print("Original set:", my_set)
+    for i in range(1, n + 1):
+        dictionary[i] = i * i
 
-print("Iterating through the set:")
-for item in my_set:
-    print(item)
+    print(dictionary)
 
-my_set.add(5)
-print("After adding 5:", my_set)
 
-my_set.remove(2)
-print("After removing 2:", my_set)
+def question5():
+    # Sort tuples by float value (descending)
+    items = [
+        ('item1', '12.20'),
+        ('item2', '15.10'),
+        ('item3', '24.5')
+    ]
+
+    items.sort(key=lambda x: float(x[1]), reverse=True)
+
+    print("\nQuestion 5")
+    print(items)
+
+
+def question6():
+    # Create, iterate, add, and remove items from a set
+    my_set = {0, 1, 2, 3, 4}
+
+    print("\nQuestion 6")
+    print("Original set:", my_set)
+
+    print("Iterating through the set:")
+    for item in my_set:
+        print(item)
+
+    my_set.add(5)
+    print("After adding 5:", my_set)
+
+    my_set.remove(2)
+    print("After removing 2:", my_set)
+
+
+def main():
+    question1()
+    question2()
+    question3()
+    question4()
+    question5()
+    question6()
+
+
+if __name__ == "__main__":
+    main()
